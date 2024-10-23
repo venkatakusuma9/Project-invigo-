@@ -1,0 +1,410 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    height: 100%;
+    margin: 0;
+}
+
+.main-container {
+    display: flex;
+    height: 100vh; /* Ensure the containers fill the viewport height */
+}
+
+.left-container,
+.right-container {
+    flex: 1; /* Ensure both containers take up equal space */
+}
+
+.left-container {
+    background-color: #212121;
+    color: #FCA61F;
+    display: flex;
+    flex-direction: column;
+    padding: 20px; /* Adjust padding as needed */
+    overflow-y: auto; /* Enable scrolling if content overflows */
+}
+
+.left-container h2 {
+    color: #FCA61F;
+}
+
+.left-container select {
+    background-color: grey;
+    color: #f8f7f6;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.left-container h2:nth-of-type(2) {
+    text-align: center;
+}
+
+.left-container ul {
+    list-style: none;
+    padding: 0;
+}
+
+.left-container ul li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: #333;
+    color: #fff;
+    margin-top: 5px;
+    border-radius: 5px;
+}
+
+.left-container ul li button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    color: #FF6347;
+}
+
+.left-container ul li button:hover {
+    color: #FF4500;
+}
+
+.action-button {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 10px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.action-button:hover {
+    background-color: #0056b3;
+}
+
+.search-input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: none;
+    border-radius: 6px;
+}
+
+.right-container {
+    background-color: #212121;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    padding: 20px; /* Adjust padding as needed */
+    overflow-y: auto; /* Enable scrolling if content overflows */
+}
+
+.right-container input[type="file"] {
+    background-color: black;
+    color: white;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    margin-top: 3px;
+    margin-bottom: 20px;
+    width: 100%;
+    align-self: flex-start;
+}
+
+.right-container .search-input {
+    background-color: grey;
+    color: white;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.right-container .input-row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.right-container .input-row input[type="file"] {
+    background-color: black;
+    color: white;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+}
+
+.right-container .input-row .search-input {
+    background-color: grey;
+    color: white;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%;
+    box-sizing: border-box;
+    margin-right: 10px;
+}
+
+.right-container .input-row .action-button {
+    background-color: #007BFF;
+    color: white;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-left: 10px;
+}
+
+.left-container .input-row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.left-container .input-row select {
+    background-color: grey;
+    color: #f9f8f7;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    margin-right: 10px;
+    width: calc(100% - 120px);
+}
+
+.left-container .input-row .action-button {
+    background-color: #007BFF;
+    color: white;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    width: 100px;
+}
+
+.right-container .action-button {
+    background-color: #007BFF;
+    color: white;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-left: 10px;
+    width: 100px;
+    align-self: flex-end;
+}
+
+.right-container .rooms-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.right-container .room-card {
+    background-color: #333;
+    color: white;
+    padding: 10px;
+    margin: 0;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: calc(33.333% - 10px);
+    box-sizing: border-box;
+}
+
+.right-container .room-card div:first-child {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.small-button.selected {
+    background-color: green;
+    color: white;
+    border: 2px solid yellow;
+    font-weight: bold;
+    box-shadow: 0 0 10px yellow;
+}
+
+.room-card .small-button {
+    background-color: grey;
+    color: yellow;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    border-radius: 50%;
+    margin: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.room-card .small-button:hover,
+.room-card .small-button.selected:hover {
+    background-color: #444;
+    color: yellow;
+}
+
+.right-container .room-card .small-button {
+    background-color: grey;
+    color: yellow;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    border-radius: 50%;
+    margin: 5px;
+}
+
+.right-container .room-card .small-button:hover {
+    background-color: #444;
+}
+
+.right-container .room-card .remove-button {
+    background-color: #FF6347;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 50%;
+    padding: 5px;
+    margin-left: 10px;
+}
+
+.right-container .room-card .remove-button:hover {
+    background-color: #FF4500;
+}
+
+.modal {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: #212121;
+    color: white;
+    padding: 20px;
+    border-radius: 5px;
+    width: 300px;
+}
+
+.room-card:hover {
+    background-color: #ddd;
+}
+
+.room-card > div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.small-button {
+    padding: 5px 10px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-left: 5px;
+}
+
+.small-button:hover {
+    background-color: #0056b3;
+}
+
+.remove-button {
+    background-color: #FF6347;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    padding: 5px;
+    margin-left: 10px;
+}
+
+.remove-button:hover {
+    background-color: #FF4500;
+    color: #f1f1f1;
+}
+
+.modal {
+    position: fixed;
+    top: 10%;
+    left: 5%;
+    background: grey;
+    color: white;
+    padding: 20px;
+    border-radius: 5px;
+    width: 300px;
+    z-index: 1000;
+    overflow-y: auto;
+    max-height: 80vh;
+}
+
+.modal-content {
+    display: flex;
+    flex-direction: column;
+    width: 250px;
+}
+
+.suggestions-list {
+    list-style: none;
+    padding: 0;
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+.suggestions-list li {
+    padding: 10px;
+    cursor: pointer;
+}
+
+.suggestions-list li:hover {
+    background-color: #463d3d;
+}
+
+.small-button.selected {
+    background-color: green;
+    color: white;
+}
+
+.allocate-button {
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+    padding: 10px 20px;
+    background-color: blue;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.allocate-button:hover {
+    background-color: darkblue;
+}
+
+/* Media queries for larger screens */
+@media (min-width: 768px) {
+    .main-container {
+        flex-direction: row;
+    }
+
+    .left-container,
+    .right-container {
+        width: 50%;
+    }
+}
+
+/* Media queries for smaller screens */
+@media (max-width: 767px) {
+    .main-container {
+        flex-direction: column;
+    }
+
+    .left-container,
+    .right-container {
+        width: 100%;
+    }
+}

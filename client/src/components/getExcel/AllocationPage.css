@@ -1,0 +1,267 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap');
+
+.allocation-page {
+    padding: 20px;
+    background-color: #333;
+    color: #fff;
+    font-family: 'Noto Serif', serif;
+    position: relative;
+}
+
+.back-arrow {
+    font-size: 24px;
+    cursor: pointer;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    color: white;
+}
+
+.allocation-page h1,
+.allocation-page h2 {
+    font-size: xx-large;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.allocation-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+.allocation-table thead {
+    color: #F5C32C;
+    /* Set color for table header */
+}
+
+.allocation-table th,
+.allocation-table td {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: left;
+}
+
+.allocation-table th {
+    background-color: #444;
+    color: #F5C32C;
+    /* Set color for header text */
+}
+
+.allocation-table th:nth-child(1),
+.allocation-table th:nth-child(2),
+.allocation-table th:nth-child(3) {
+    color: #F5C32C;
+    /* Ensure specific color for Room, Users, and Actions */
+}
+
+.allocation-table tr:nth-child(even) {
+    background-color: #444;
+}
+
+.allocation-table tr:hover {
+    background-color: #555;
+}
+
+.allocation-table button {
+    padding: 5px 10px;
+    border: none;
+    background-color: #007bff;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.allocation-table button:hover {
+    background-color: #0056b3;
+}
+
+.edit-popup,
+.print-popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.print-popup,
+.print-popup-content h3 {
+    color: #F5C32C;
+}
+
+.edit-popup-content,
+.print-popup-content {
+    background: rgba(51, 51, 51, 0.3);
+    /* 80% opacity */
+    padding: 20px;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 500px;
+    text-align: left;
+}
+
+.edit-popup-content h3,
+.print-popup-content h3 {
+    margin-bottom: 20px;
+}
+
+.edit-popup-content label,
+.print-popup-content label {
+    display: block;
+    margin-bottom: 10px;
+    color: #fff;
+}
+
+.edit-popup-content .select-input,
+.print-popup-content .select-input {
+    width: 100%;
+    background-color: #8e0808;
+    color: rgb(8, 12, 1);
+    margin-bottom: 10px;
+}
+
+/* Styles for react-select */
+.select-input .react-select__control {
+    background-color: red;
+    border-color: #666;
+    color: #fff;
+    border-radius: 5px;
+}
+
+.select-input .react-select__control--is-focused {
+    border-color: #007bff;
+    box-shadow: 0 0 0 1px #007bff;
+}
+
+.select-input .react-select__menu {
+    background-color: #555;
+    color: #fff;
+    border-radius: 5px;
+}
+
+.select-input .react-select__option {
+    background-color: #555;
+    color: #fff;
+    border-bottom: 1px solid #444;
+    padding: 10px;
+}
+
+.select-input .react-select__option--is-focused {
+    background-color: #007bff;
+    color: #fff;
+}
+
+.select-input .react-select__option--is-selected {
+    background-color: #28a745;
+    color: #fff;
+}
+
+.select-input .react-select__multi-value {
+    background-color: #444;
+    border-radius: 3px;
+    color: #fff;
+}
+
+.select-input .react-select_multi-value_label {
+    color: #fff;
+}
+
+.select-input .react-select_multi-value_remove {
+    background-color: #e73030;
+    color: #fff;
+}
+
+.select-input .react-select_multi-value_remove:hover {
+    background-color: #ff6f61;
+}
+
+.edit-popup-buttons,
+.print-popup-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.edit-popup-buttons button,
+.print-popup-buttons button {
+    padding: 10px 20px;
+    border: none;
+    background-color: green;
+    color: white;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+.edit-popup-buttons button:hover,
+.print-popup-buttons button:hover {
+    background-color: darkgreen;
+}
+
+.print-button {
+    display: block;
+    padding: 10px 20px;
+    background-color: #28a745;
+    color: #F5C32C;
+    /* Change text color to yellow */
+    border: none;
+    cursor: pointer;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+.print-button:hover {
+    background-color: #218838;
+    color: #F5C32C;
+    /* Ensure the text color stays yellow on hover */
+}
+
+.Toastify__toast-container--bottom-center {
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.Toastify__toast {
+    background-color: #444;
+    color: #fff;
+}
+
+.Toastify__toast--success {
+    background-color: #28a745;
+}
+
+.Toastify__toast--error {
+    background-color: #dc3545;
+}
+
+.print-popup-content table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+.print-popup-content table td {
+    padding: 10px;
+}
+
+.print-popup-content table input,
+.print-popup-content table textarea {
+    width: 100%;
+    padding: 5px;
+    margin-top: 5px;
+    background-color: rgba(68, 68, 68, 0.9);
+    /* Slightly transparent background */
+    color: #fff;
+    border: 1px solid #555;
+    border-radius: 5px;
+}
+
+/* Ensure icons inside the print-popup-content are white */
+.print-popup-content .react-icons {
+    color: white;
+}
